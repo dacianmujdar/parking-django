@@ -1,1 +1,1 @@
-web: gunicorn parking_project.wsgi:parking --preload --workers 1
+web: python manage.py runserver
