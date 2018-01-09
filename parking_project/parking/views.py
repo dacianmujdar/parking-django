@@ -1,5 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render
+from rest_framework import permissions
 from rest_framework.generics import GenericAPIView
 from rest_framework.mixins import ListModelMixin
 
@@ -14,6 +15,7 @@ def detail(request):
 class ParkingList(GenericAPIView, ListModelMixin):
     queryset = Parking.objects.all()
     serializer_class = ParkingSerializer
+    permission_class = permissions.IsAuthenticated
 
     def get(self, request, *args, **kwargs):
         return self.list(request, *args, **kwargs)
