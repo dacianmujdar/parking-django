@@ -1,1 +1,1 @@
-web: python manage.py runserver -p 8080
+web: python parking_project/manage.py runserver 0.0.0.0:$PORT
