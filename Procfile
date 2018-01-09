@@ -1,1 +1,1 @@
-web: gunicorn parking.wsgi --log-file -
+web: gunicorn parking_project.wsgi --log-file -
