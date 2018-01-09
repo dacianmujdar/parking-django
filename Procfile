@@ -1,1 +1,1 @@
-web: gunicorn sibylBilling.wsgi --log-file -
+web: gunicorn parking.wsgi --log-file -
