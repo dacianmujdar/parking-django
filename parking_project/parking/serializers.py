@@ -23,3 +23,4 @@ class ParkingSerializer(serializers.ModelSerializer):
 
     def get_is_administrator(self, parking):
         return self.context['request'].user.is_staff
+

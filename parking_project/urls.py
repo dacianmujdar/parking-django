@@ -16,9 +16,12 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
-from parking_project.parking.views import ParkingList
+from parking_project.parking.views import ParkingList, RequestDetail, CreateRequest
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^parking/$', ParkingList.as_view()),
+    url(r'^requests/(?P<pk>[0-9]+)/$', RequestDetail.as_view()),
+    url(r'^requests/$', CreateRequest.as_view()),
+
 ]
