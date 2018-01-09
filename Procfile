@@ -1,1 +1,1 @@
-web: python parking_project/manage.py runserver 0.0.0.0:$PORT
+web: gunicorn subfolder/parking_project.wsgi
