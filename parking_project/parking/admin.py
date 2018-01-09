@@ -1,8 +1,7 @@
 from django.contrib import admin
 
-# Register your models here.
-import models
+from parking_project.parking.models import Parking, Request, RequestType
 
-admin.site.register(models.Parking)
-admin.site.register(models.Request)
-admin.site.register(models.RequestType)
+admin.site.register(Parking)
+admin.site.register(Request)
+admin.site.register(RequestType)
