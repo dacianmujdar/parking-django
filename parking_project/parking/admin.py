@@ -4,3 +4,5 @@ from django.contrib import admin
 import models
 
 admin.site.register(models.Parking)
+admin.site.register(models.Request)
+admin.site.register(models.RequestType)
