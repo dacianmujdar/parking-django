@@ -1,1 +1,1 @@
-web: gunicorn subfolder/parking_project.wsgi
+web: gunicorn parking_project.wsgi
