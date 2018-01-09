@@ -16,7 +16,7 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
-from parking.views import ParkingList
+from parking_project.parking.views import ParkingList
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
