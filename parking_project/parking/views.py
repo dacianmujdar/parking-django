@@ -16,7 +16,7 @@ def detail(request):
 class ParkingList(GenericAPIView, ListModelMixin):
     queryset = Parking.objects.all()
     serializer_class = ParkingSerializer
-    permission_class = permissions.IsAuthenticated
+    permission_classes = (permissions.IsAuthenticated,)
 
     def get(self, request, *args, **kwargs):
         return self.list(request, *args, **kwargs)
@@ -27,6 +27,7 @@ class RequestDetail(mixins.RetrieveModelMixin,
                     mixins.DestroyModelMixin,
                     GenericAPIView):
     serializer_class = RequestSerializer
+    permission_classes = (permissions.IsAuthenticated,)
 
     def get_queryset(self):
         """
@@ -52,7 +53,7 @@ class RequestDetail(mixins.RetrieveModelMixin,
 class CreateRequest(GenericAPIView, CreateModelMixin):
     serializer_class = RequestSerializer
     queryset = Request.objects.all()
-    permission_class = permissions.IsAuthenticated
+    permission_classes = (permissions.IsAuthenticated,)
 
     def post(self, request, *args, **kwargs):
         return self.create(request, *args, **kwargs)

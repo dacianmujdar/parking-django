@@ -13,12 +13,14 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url
+from django.conf.urls import url, include
 from django.contrib import admin
 
 from parking_project.parking.views import ParkingList, RequestDetail, CreateRequest
 
 urlpatterns = [
+    url(r'^api-auth/', include('rest_framework.urls',
+                               namespace='rest_framework')),
     url(r'^admin/', admin.site.urls),
     url(r'^parking/$', ParkingList.as_view()),
     url(r'^requests/(?P<pk>[0-9]+)/$', RequestDetail.as_view()),
