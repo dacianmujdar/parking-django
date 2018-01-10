@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'parking_project.parking',
+    'oauth2_provider'
 ]
 
 MIDDLEWARE = [
@@ -130,3 +131,21 @@ STATICFILES_DIRS = (
 )
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'oauth2_provider.ext.rest_framework.OAuth2Authentication',
+        'rest_framework.authentication.SessionAuthentication',  # for Browsable API
+
+    ),
+}
+
+OAUTH2_PROVIDER = {
+    'ACCESS_TOKEN_EXPIRE_SECONDS': 3600 * 5,
+    'ALLOWED_REDIRECT_URI_SCHEMES': ["http", "https"],
+    'SCOPES': {
+        'read': 'Read scope',
+        'write': 'Write scope',
+        'groups': 'Access to your groups'
+    }
+}

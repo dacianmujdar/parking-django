@@ -21,6 +21,7 @@ from parking_project.parking.views import ParkingList, RequestDetail, CreateRequ
 urlpatterns = [
     url(r'^api-auth/', include('rest_framework.urls',
                                namespace='rest_framework')),
+    url(r'^oauth2/', include('oauth2_provider.urls', namespace='oauth2_provider')),
     url(r'^admin/', admin.site.urls),
     url(r'^parking/$', ParkingList.as_view()),
     url(r'^requests/(?P<pk>[0-9]+)/$', RequestDetail.as_view()),
