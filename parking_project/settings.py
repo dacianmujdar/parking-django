@@ -149,3 +149,28 @@ OAUTH2_PROVIDER = {
         'groups': 'Access to your groups'
     }
 }
+
+
+# CORS SETTINGS
+# ------------------------------------------------------------------------------
+# TODO: research this more
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_ORIGIN_WHITELIST = ('*',)
+CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOW_HEADERS = (
+    'x-requested-with',
+    'X-HTTP-Method-Override',
+    'content-type',
+    'accept',
+    'origin',
+    'authorization',
+    'x-csrftoken',
+    'vary',
+    'ETag',
+    'If-Match',
+    'If-none-match',
+    'Cookie',
+    'Retry-After',
+    '*',
+)
+CORS_EXPOSE_HEADERS = list(CORS_ALLOW_HEADERS)
