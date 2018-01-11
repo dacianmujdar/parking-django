@@ -16,7 +16,7 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 
-from parking_project.parking.views import ParkingList, RequestDetail, CreateRequest
+from parking_project.parking.views import ParkingList, RequestDetail, RequestView
 
 urlpatterns = [
     url(r'^api-auth/', include('rest_framework.urls',
@@ -25,6 +25,6 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^parking/$', ParkingList.as_view()),
     url(r'^requests/(?P<pk>[0-9]+)/$', RequestDetail.as_view()),
-    url(r'^requests/$', CreateRequest.as_view()),
+    url(r'^requests/$', RequestView.as_view()),
 
 ]

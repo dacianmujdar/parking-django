@@ -50,10 +50,13 @@ class RequestDetail(mixins.RetrieveModelMixin,
         return self.partial_update(request, *args, **kwargs)
 
 
-class CreateRequest(GenericAPIView, CreateModelMixin):
+class RequestView(GenericAPIView, CreateModelMixin, ListModelMixin):
     serializer_class = RequestSerializer
     queryset = Request.objects.all()
     permission_classes = (permissions.IsAuthenticated,)
 
     def post(self, request, *args, **kwargs):
         return self.create(request, *args, **kwargs)
+
+    def get(self, request, *args, **kwargs):
+        return self.list(request, *args, **kwargs)
