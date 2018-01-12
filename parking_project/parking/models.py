@@ -44,7 +44,6 @@ class Request(models.Model):
     parking = models.ForeignKey('Parking', verbose_name='Parking', related_name='requests', default=1, blank=True)
 
 
-
 class RequestType(models.Model):
     type = models.CharField(max_length=128, verbose_name=('Request type'),
                             help_text=('The request type'))

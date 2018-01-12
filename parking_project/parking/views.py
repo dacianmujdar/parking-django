@@ -1,16 +1,10 @@
-from django.http import HttpResponse
-from django.shortcuts import render
 from rest_framework import mixins
 from rest_framework import permissions
 from rest_framework.generics import GenericAPIView
 from rest_framework.mixins import ListModelMixin, CreateModelMixin
 
-from parking_project.parking.models import Parking, Request
-from parking_project.parking.serializers import ParkingSerializer, RequestSerializer
-
-
-def detail(request):
-    return HttpResponse("Yo")
+from parking_project.parking.models import Parking, Request, RequestType
+from parking_project.parking.serializers import ParkingSerializer, RequestSerializer, RequestTypesSerializer
 
 
 class ParkingList(GenericAPIView, ListModelMixin):
@@ -57,6 +51,15 @@ class RequestView(GenericAPIView, CreateModelMixin, ListModelMixin):
 
     def post(self, request, *args, **kwargs):
         return self.create(request, *args, **kwargs)
+
+    def get(self, request, *args, **kwargs):
+        return self.list(request, *args, **kwargs)
+
+
+class RequestTypeView(GenericAPIView, ListModelMixin):
+    serializer_class = RequestTypesSerializer
+    queryset = RequestType.objects.all()
+    permission_classes = (permissions.IsAuthenticated,)
 
     def get(self, request, *args, **kwargs):
         return self.list(request, *args, **kwargs)
