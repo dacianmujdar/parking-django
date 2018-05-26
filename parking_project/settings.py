@@ -39,6 +39,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'parking_project.parking',
+    'parking_project.parking_space',
+    'parking_project.camera',
+    'parking_project.requests',
+    'parking_project.offer',
+    'parking_project.account',
     'oauth2_provider',
     'corsheaders',
 ]
