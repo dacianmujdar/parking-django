@@ -17,6 +17,7 @@ from django.conf.urls import url, include
 from django.contrib import admin
 
 from parking_project.parking.views import ParkingList
+from parking_project.parking_space.views import ParkingSpacesList
 from parking_project.requests.views import RequestView, RequestDetail
 
 urlpatterns = [
@@ -24,7 +25,14 @@ urlpatterns = [
                                namespace='rest_framework')),
     url(r'^oauth2/', include('oauth2_provider.urls', namespace='oauth2_provider')),
     url(r'^admin/', admin.site.urls),
+
+    # parking
     url(r'^parking/$', ParkingList.as_view()),
+
+    # parking area
+    url(r'^parking/(?P<parking_id>[0-9]+)/parking-spaces/$', ParkingSpacesList.as_view()),
+
+    # requests
     url(r'^requests/(?P<pk>[0-9]+)/$', RequestDetail.as_view()),
     url(r'^requests/$', RequestView.as_view()),
 

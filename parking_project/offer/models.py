@@ -5,7 +5,7 @@ from extended_choices import Choices
 class Offer(models.Model):
     STATUS_TYPE = Choices(
         ('AVAILABLE', 1, 'Available'),
-        ('UNAVAILABLE', 2, 'UNAVAILABLE'),
+        ('UNAVAILABLE', 2, 'Unavailable'),
     )
     start_date = models.DateTimeField(null=True, blank=True)
     expiration_date = models.DateTimeField(null=True, blank=True)
