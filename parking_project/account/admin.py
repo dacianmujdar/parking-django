@@ -1,5 +1,4 @@
 from django.contrib import admin
-
-from models import Account
+from parking_project.account.models import Account
 
 admin.register(Account)

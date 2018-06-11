@@ -4,16 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/parking_project/parking/models.py" line="40" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="06807216-6043-4d9b-b338-c2a5449aea54" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/parking_project/requests/serializers.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/parking.iml" afterPath="$PROJECT_DIR$/.idea/parking.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/parking_project/parking/serializers.py" afterPath="$PROJECT_DIR$/parking_project/parking/serializers.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/parking_project/parking/views.py" afterPath="$PROJECT_DIR$/parking_project/parking/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/parking_project/urls.py" afterPath="$PROJECT_DIR$/parking_project/urls.py" />
-    </list>
+    <list default="true" id="06807216-6043-4d9b-b338-c2a5449aea54" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -90,6 +81,8 @@
               <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
+                <marker date="1528720333408" expanded="true" signature="147:187" ph="..." />
+                <marker date="1528720333408" expanded="true" signature="163:187" ph="..." />
               </folding>
             </state>
           </provider>
@@ -715,7 +708,7 @@
         <state relative-caret-position="15">
           <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding>
-            <element signature="e#0#31#0" expanded="true" />
+            <element signature="e#0#31#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -725,7 +718,7 @@
         <state relative-caret-position="15">
           <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#0#26#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -783,6 +776,8 @@
           <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
+            <marker date="1528720333408" expanded="true" signature="147:187" ph="..." />
+            <marker date="1528720333408" expanded="true" signature="163:187" ph="..." />
           </folding>
         </state>
       </provider>
