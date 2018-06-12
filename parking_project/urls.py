@@ -17,6 +17,7 @@ from django.conf.urls import url, include
 from django.contrib import admin
 
 from parking_project.account.views import ProfileView
+from parking_project.offer.views import OffersView
 from parking_project.parking.views import ParkingList
 from parking_project.parking_space.views import ParkingSpacesList
 from parking_project.requests.views import RequestView, RequestDetail, AcceptRequestView, RejectRequestView
@@ -42,6 +43,8 @@ urlpatterns = [
     url(r'^requests/(?P<pk>[0-9]+)/reject/$', RejectRequestView.as_view()),
     url(r'^requests/$', RequestView.as_view()),
 
+    # offers
+    url(r'^offers/$', OffersView.as_view()),
 
 
 ]
