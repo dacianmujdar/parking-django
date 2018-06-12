@@ -16,6 +16,7 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 
+from parking_project.account.views import ProfileView
 from parking_project.parking.views import ParkingList
 from parking_project.parking_space.views import ParkingSpacesList
 from parking_project.requests.views import RequestView, RequestDetail
@@ -25,6 +26,9 @@ urlpatterns = [
                                namespace='rest_framework')),
     url(r'^oauth2/', include('oauth2_provider.urls', namespace='oauth2_provider')),
     url(r'^admin/', admin.site.urls),
+
+    # account
+    url(r'^profile/$', ProfileView.as_view()),
 
     # parking
     url(r'^parking/$', ParkingList.as_view()),
