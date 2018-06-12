@@ -101,3 +101,14 @@ class RejectRequestView(GenericAPIView, CreateModelMixin):
 
         return Response(status=status.HTTP_204_NO_CONTENT)
 
+
+class MarkAsViewedView(GenericAPIView, CreateModelMixin):
+    permission_classes = (permissions.IsAuthenticated,)
+
+    def post(self, request, *args, **kwargs):
+        request_id = self.kwargs['pk']
+        request = Request.objects.get(id=request_id)
+
+        request.was_viewed = True
+        request.save()
+        return Response(status=status.HTTP_204_NO_CONTENT)

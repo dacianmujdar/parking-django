@@ -24,4 +24,4 @@ class Request(models.Model):
                                               default=REQUEST_STATUS.PENDING)
     offer = models.ForeignKey('offer.Offer', related_name='requests')
     creator = models.ForeignKey('account.Account', related_name='own_requests')
-
+    was_viewed = models.BooleanField(default=False)
