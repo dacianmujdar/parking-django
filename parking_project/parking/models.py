@@ -7,4 +7,7 @@ class Parking(models.Model):
     """
     Parking model
     """
-
+    latitude = models.FloatField()
+    longitude = models.FloatField()
+    name = models.CharField(max_length=200)
+    address = models.TextField(max_length=300)

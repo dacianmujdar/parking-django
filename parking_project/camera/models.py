@@ -5,5 +5,6 @@ from django.contrib.auth.models import User
 
 
 class Camera(models.Model):
-    pass
+    url = models.TextField(help_text="The video stream url")
+    parking = models.ForeignKey('parking.Parking', help_text='The parking where the camera belongs')
 
