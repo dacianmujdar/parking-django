@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="06807216-6043-4d9b-b338-c2a5449aea54" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/parking_project/requests/views.py" afterPath="$PROJECT_DIR$/parking_project/requests/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/parking_project/parking_space/models.py" afterPath="$PROJECT_DIR$/parking_project/parking_space/models.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -20,11 +20,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/parking_project/requests/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="158">
-              <caret line="62" column="92" lean-forward="false" selection-start-line="62" selection-start-column="92" selection-end-line="62" selection-end-column="92" />
+            <state relative-caret-position="248">
+              <caret line="69" column="55" lean-forward="true" selection-start-line="69" selection-start-column="55" selection-end-line="69" selection-end-column="55" />
               <folding>
                 <element signature="e#0#33#0" expanded="true" />
               </folding>
@@ -37,6 +37,16 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="345">
               <caret line="24" column="9" lean-forward="false" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/parking_project/parking_space/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="15" column="21" lean-forward="false" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -70,6 +80,7 @@
       <find>set_trace</find>
       <find>unicode</find>
       <find>static</find>
+      <find>account</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -106,7 +117,6 @@
         <option value="$PROJECT_DIR$/parking_project/account/models.py" />
         <option value="$PROJECT_DIR$/parking_project/offer/serializers.py" />
         <option value="$PROJECT_DIR$/parking_project/offer/views.py" />
-        <option value="$PROJECT_DIR$/parking_project/parking_space/models.py" />
         <option value="$PROJECT_DIR$/parking_project/requests/models.py" />
         <option value="$PROJECT_DIR$/parking_project/parking_space/serializers.py" />
         <option value="$PROJECT_DIR$/parking_project/parking_space/views.py" />
@@ -114,6 +124,7 @@
         <option value="$PROJECT_DIR$/parking_project/offer/models.py" />
         <option value="$PROJECT_DIR$/parking_project/parking/serializers.py" />
         <option value="$PROJECT_DIR$/parking_project/requests/views.py" />
+        <option value="$PROJECT_DIR$/parking_project/parking_space/models.py" />
       </list>
     </option>
   </component>
@@ -790,14 +801,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/parking_project/parking_space/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="16" lean-forward="false" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/parking_project/offer/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -840,11 +843,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/parking_project/requests/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="62" column="92" lean-forward="false" selection-start-line="62" selection-start-column="92" selection-end-line="62" selection-end-column="92" />
+        <state relative-caret-position="248">
+          <caret line="69" column="55" lean-forward="true" selection-start-line="69" selection-start-column="55" selection-end-line="69" selection-end-column="55" />
           <folding>
             <element signature="e#0#33#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/parking_project/parking_space/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="21" lean-forward="false" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
+          <folding />
         </state>
       </provider>
     </entry>

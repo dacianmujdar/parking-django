@@ -18,3 +18,6 @@ class ParkingSpace(models.Model):
     expiration_date = models.DateTimeField(null=True, blank=True)
 
     allocated_to = models.ForeignKey('account.Account', related_name='parking_spaces', null=True, blank=True)
+
+    def __unicode__(self):
+        return self.code
