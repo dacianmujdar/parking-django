@@ -16,3 +16,5 @@ class ParkingSpace(models.Model):
     times_extended = models.IntegerField(null=True, blank=True)
     start_date = models.DateTimeField(null=True, blank=True)
     expiration_date = models.DateTimeField(null=True, blank=True)
+
+    allocated_to = models.ForeignKey('account.Account', related_name='parking_spaces', null=True, blank=True)

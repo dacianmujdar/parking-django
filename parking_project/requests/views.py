@@ -51,6 +51,18 @@ class RequestView(GenericAPIView, CreateModelMixin, ListModelMixin):
         return self.list(request, *args, **kwargs)
 
 
+class InboxView(GenericAPIView, ListModelMixin):
+    serializer_class = RequestSerializer
+    permission_classes = (permissions.IsAuthenticated,)
+
+    def get_queryset(self):
+        # TO DO
+        return Request.objects.all()
+
+    def get(self, request, *args, **kwargs):
+        return self.list(request, *args, **kwargs)
+
+
 class AcceptRequestView(GenericAPIView, CreateModelMixin):
     permission_classes = (permissions.IsAuthenticated,)
 
