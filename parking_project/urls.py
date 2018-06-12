@@ -37,6 +37,7 @@ urlpatterns = [
 
     # parking area
     url(r'^parking/(?P<parking_id>[0-9]+)/parking-spaces/$', ParkingSpacesList.as_view()),
+    url(r'^subscriptions/$', OwnParkingSpacesView.as_view()),
 
     # requests
     url(r'^requests/(?P<pk>[0-9]+)/$', RequestDetail.as_view()),

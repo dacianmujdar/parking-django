@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="06807216-6043-4d9b-b338-c2a5449aea54" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/parking_project/requests/models.py" afterPath="$PROJECT_DIR$/parking_project/requests/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/parking_project/requests/views.py" afterPath="$PROJECT_DIR$/parking_project/requests/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/parking_project/parking_space/views.py" afterPath="$PROJECT_DIR$/parking_project/parking_space/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/parking_project/urls.py" afterPath="$PROJECT_DIR$/parking_project/urls.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,11 +21,43 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/parking_project/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="247">
+              <caret line="38" column="70" lean-forward="false" selection-start-line="38" selection-start-column="70" selection-end-line="38" selection-end-column="70" />
+              <folding>
+                <element signature="e#649#690#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/parking_project/requests/views.py">
+        <entry file="file://$PROJECT_DIR$/parking_project/parking_space/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="322">
-              <caret line="112" column="22" lean-forward="false" selection-start-line="112" selection-start-column="22" selection-end-line="112" selection-end-column="22" />
+              <caret line="27" column="81" lean-forward="false" selection-start-line="27" selection-start-column="81" selection-end-line="27" selection-end-column="81" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/parking_project/requests/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="202">
+              <caret line="104" column="22" lean-forward="false" selection-start-line="104" selection-start-column="6" selection-end-line="104" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/parking_project/parking_space/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="19" column="16" lean-forward="false" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -94,15 +125,15 @@
         <option value="$PROJECT_DIR$/parking_project/camera/models.py" />
         <option value="$PROJECT_DIR$/parking_project/parking/serializers.py" />
         <option value="$PROJECT_DIR$/parking_project/account/models.py" />
-        <option value="$PROJECT_DIR$/parking_project/parking_space/views.py" />
         <option value="$PROJECT_DIR$/parking_project/offer/models.py" />
         <option value="$PROJECT_DIR$/parking_project/offer/serializers.py" />
         <option value="$PROJECT_DIR$/parking_project/offer/views.py" />
         <option value="$PROJECT_DIR$/parking_project/parking_space/models.py" />
         <option value="$PROJECT_DIR$/parking_project/requests/models.py" />
         <option value="$PROJECT_DIR$/parking_project/parking_space/serializers.py" />
-        <option value="$PROJECT_DIR$/parking_project/urls.py" />
         <option value="$PROJECT_DIR$/parking_project/requests/views.py" />
+        <option value="$PROJECT_DIR$/parking_project/urls.py" />
+        <option value="$PROJECT_DIR$/parking_project/parking_space/views.py" />
       </list>
     </option>
   </component>
@@ -726,16 +757,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/parking_project/parking_space/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="50" lean-forward="true" selection-start-line="17" selection-start-column="50" selection-end-line="17" selection-end-column="50" />
-          <folding>
-            <element signature="e#0#38#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/parking_project/offer/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -749,7 +770,7 @@
         <state relative-caret-position="135">
           <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding>
-            <element signature="e#0#38#0" expanded="true" />
+            <element signature="e#0#38#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -761,14 +782,6 @@
           <folding>
             <element signature="e#0#46#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/parking_project/parking_space/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="108" lean-forward="false" selection-start-line="19" selection-start-column="108" selection-end-line="19" selection-end-column="108" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -798,18 +811,34 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/parking_project/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="42" column="59" lean-forward="true" selection-start-line="42" selection-start-column="59" selection-end-line="42" selection-end-column="59" />
+        <state relative-caret-position="247">
+          <caret line="38" column="70" lean-forward="false" selection-start-line="38" selection-start-column="70" selection-end-line="38" selection-end-column="70" />
           <folding>
             <element signature="e#649#690#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/parking_project/parking_space/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="16" lean-forward="false" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/parking_project/requests/views.py">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="104" column="22" lean-forward="false" selection-start-line="104" selection-start-column="6" selection-end-line="104" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/parking_project/parking_space/views.py">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="322">
-          <caret line="112" column="22" lean-forward="false" selection-start-line="112" selection-start-column="22" selection-end-line="112" selection-end-column="22" />
+          <caret line="27" column="81" lean-forward="false" selection-start-line="27" selection-start-column="81" selection-end-line="27" selection-end-column="81" />
           <folding />
         </state>
       </provider>
