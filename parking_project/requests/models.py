@@ -25,3 +25,6 @@ class Request(models.Model):
     offer = models.ForeignKey('offer.Offer', related_name='requests')
     creator = models.ForeignKey('account.Account', related_name='own_requests')
     was_viewed = models.BooleanField(default=False)
+
+    def __str__(self):
+        return "Request: creator - {}, {}".format(self.creator, self.offer)

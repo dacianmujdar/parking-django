@@ -9,6 +9,6 @@ class Account(models.Model):
     user = models.OneToOneField(User, related_name='profile')
     phone_no = models.CharField(max_length=15, blank=True, null=True)
 
-    def __unicode__(self):
-        return self.user.first_name + ' ' + self.user.last_name
+    def __str__(self):
+        return self.user.username
 

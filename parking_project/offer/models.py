@@ -17,4 +17,6 @@ class Offer(models.Model):
     creator = models.ForeignKey('account.Account', related_name='own_offers', help_text='The user which created the offer')
     parking_space = models.ForeignKey('parking_space.ParkingSpace', related_name='offers', null=True, blank=True)
 
-
+    def __str__(self):
+        return "Offer: creator - {}, {},  period - {} : {}".format(self.creator, self.parking_space,
+                                                                                   self.start_date, self.expiration_date)

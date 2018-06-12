@@ -11,3 +11,6 @@ class Parking(models.Model):
     longitude = models.FloatField()
     name = models.CharField(max_length=200)
     address = models.TextField(max_length=300)
+
+    def __str__(self):
+        return self.name

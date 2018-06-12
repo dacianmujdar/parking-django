@@ -19,5 +19,5 @@ class ParkingSpace(models.Model):
 
     allocated_to = models.ForeignKey('account.Account', related_name='parking_spaces', null=True, blank=True)
 
-    def __unicode__(self):
-        return self.code
+    def __str__(self):
+        return "Parking space: {} from parking {}".format(self.code, self.parking)
