@@ -15,6 +15,6 @@ class Offer(models.Model):
     status = models.PositiveSmallIntegerField(choices=STATUS_TYPE, verbose_name='status',
                                               default=STATUS_TYPE.AVAILABLE)
     creator = models.ForeignKey('account.Account', related_name='own_offers', help_text='The user which created the offer')
-
+    parking_space = models.ForeignKey('parking_space.ParkingSpace', related_name='offers', null=True, blank=True)
 
 
