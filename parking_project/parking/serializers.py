@@ -9,6 +9,3 @@ class ParkingSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Parking
-
-    def get_image_url(self, parking):
-        return 'static/parkings/{}.png'.format(parking.id)
