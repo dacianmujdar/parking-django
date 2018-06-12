@@ -5,6 +5,8 @@ from rest_framework.generics import GenericAPIView
 from rest_framework.mixins import ListModelMixin, CreateModelMixin
 from rest_framework.response import Response
 
+from django.db.models import Q
+
 from parking_project.requests.models import Request
 from parking_project.requests.serializers import RequestSerializer
 
@@ -56,8 +58,9 @@ class InboxView(GenericAPIView, ListModelMixin):
     permission_classes = (permissions.IsAuthenticated,)
 
     def get_queryset(self):
-        # TO DO
-        return Request.objects.all()
+        account = self.request.user.account
+        # all requests made to user offers OR all requests created by the user with status ACCEPTED or REJECTED
+        return Request.objects.filter(Q(offer__creator=account) | Q(creator=account, status_gt=1))
 
     def get(self, request, *args, **kwargs):
         return self.list(request, *args, **kwargs)
