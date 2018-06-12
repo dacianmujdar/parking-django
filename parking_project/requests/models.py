@@ -22,6 +22,6 @@ class Request(models.Model):
 
     status = models.PositiveSmallIntegerField(choices=REQUEST_STATUS, verbose_name='status',
                                               default=REQUEST_STATUS.PENDING)
-    offer = models.ForeignKey('offer.Offer')
-    creator = models.ForeignKey('account.Account')
+    offer = models.ForeignKey('offer.Offer', related_name='requests')
+    creator = models.ForeignKey('account.Account', related_name='own_requests')
 

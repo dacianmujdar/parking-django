@@ -1,7 +1,9 @@
 from rest_framework import mixins
 from rest_framework import permissions
+from rest_framework import status
 from rest_framework.generics import GenericAPIView
 from rest_framework.mixins import ListModelMixin, CreateModelMixin
+from rest_framework.response import Response
 
 from parking_project.requests.models import Request
 from parking_project.requests.serializers import RequestSerializer
@@ -47,3 +49,43 @@ class RequestView(GenericAPIView, CreateModelMixin, ListModelMixin):
 
     def get(self, request, *args, **kwargs):
         return self.list(request, *args, **kwargs)
+
+
+class AcceptRequestView(GenericAPIView, CreateModelMixin):
+    permission_classes = (permissions.IsAuthenticated,)
+
+    def post(self, request, *args, **kwargs):
+        request_id = self.kwargs['pk']
+        request = Request.objects.get(id=request_id)
+        offer = request.offer
+
+        if offer.creator.user != self.request.user:
+            return Response(status=status.HTTP_404_NOT_FOUND)
+
+        # change all other requests to REJECTED
+        for req in offer.requests.all():
+            req.status = Request.REQUEST_STATUS.REJECTED
+            req.save()
+
+        request.status = Request.REQUEST_STATUS.ACCEPTED
+        request.save()
+
+        return Response(status=status.HTTP_204_NO_CONTENT)
+
+
+class RejectRequestView(GenericAPIView, CreateModelMixin):
+    permission_classes = (permissions.IsAuthenticated,)
+
+    def post(self, request, *args, **kwargs):
+        request_id = self.kwargs['pk']
+        request = Request.objects.get(id=request_id)
+        offer = request.offer
+
+        if offer.creator.user != self.request.user:
+            return Response(status=status.HTTP_404_NOT_FOUND)
+
+        request.status = Request.REQUEST_STATUS.REJECTED
+        request.save()
+
+        return Response(status=status.HTTP_204_NO_CONTENT)
+

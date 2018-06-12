@@ -14,7 +14,7 @@ class Offer(models.Model):
     creation_date = models.DateTimeField(null=True, blank=True)
     status = models.PositiveSmallIntegerField(choices=STATUS_TYPE, verbose_name='status',
                                               default=STATUS_TYPE.AVAILABLE)
-    creator = models.ForeignKey('account.Account', help_text='The user which created the offer')
+    creator = models.ForeignKey('account.Account', related_name='own_offers', help_text='The user which created the offer')
 
 
 
