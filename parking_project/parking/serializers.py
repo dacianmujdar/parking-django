@@ -5,6 +5,10 @@ from parking_project.requests.serializers import RequestSerializer
 
 
 class ParkingSerializer(serializers.ModelSerializer):
+    image_url = serializers.SerializerMethodField()
+
     class Meta:
         model = Parking
 
+    def get_image_url(self, parking):
+        return 'static/parkings/{}.png'.format(parking.id)
