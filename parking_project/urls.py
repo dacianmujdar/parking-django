@@ -40,4 +40,6 @@ urlpatterns = [
     url(r'^requests/(?P<pk>[0-9]+)/$', RequestDetail.as_view()),
     url(r'^requests/$', RequestView.as_view()),
 
+
+
 ]

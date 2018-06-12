@@ -37,8 +37,10 @@ class RequestDetail(mixins.RetrieveModelMixin,
 
 class RequestView(GenericAPIView, CreateModelMixin, ListModelMixin):
     serializer_class = RequestSerializer
-    queryset = Request.objects.all()
     permission_classes = (permissions.IsAuthenticated,)
+
+    def get_queryset(self):
+        return Request.objects.filter(creator=self.request.user.profile)
 
     def post(self, request, *args, **kwargs):
         return self.create(request, *args, **kwargs)
