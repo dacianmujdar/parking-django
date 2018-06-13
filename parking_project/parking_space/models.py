@@ -20,4 +20,6 @@ class ParkingSpace(models.Model):
     allocated_to = models.ForeignKey('account.Account', related_name='parking_spaces', null=True, blank=True)
 
     def __str__(self):
-        return "Parking space: {} from parking {}".format(self.code, self.parking)
+        return "Parking space: {} from parking {} allocated to {} from {} to {} ".format(self.code, self.parking,
+                                                                                       self.allocated_to,
+                                                                                       self.start_date, self.expiration_date)
