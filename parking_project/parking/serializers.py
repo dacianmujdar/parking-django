@@ -5,7 +5,5 @@ from parking_project.requests.serializers import RequestSerializer
 
 
 class ParkingSerializer(serializers.ModelSerializer):
-    image_url = serializers.SerializerMethodField()
-
     class Meta:
         model = Parking
