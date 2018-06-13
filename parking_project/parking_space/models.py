@@ -22,4 +22,4 @@ class ParkingSpace(models.Model):
     def __str__(self):
         return "Parking space: {} from parking {} allocated to {} from {} to {} ".format(self.code, self.parking,
                                                                                        self.allocated_to,
-                                                                                       self.start_date.date(), self.expiration_date.date())
+                                                                                       self.start_date, self.expiration_date)
