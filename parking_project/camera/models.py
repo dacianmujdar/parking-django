@@ -8,3 +8,5 @@ class Camera(models.Model):
     url = models.TextField(help_text="The video stream url")
     parking = models.ForeignKey('parking.Parking', help_text='The parking where the camera belongs')
 
+    def __str__(self):
+        return "Camera from {}".format(self.parking.name)

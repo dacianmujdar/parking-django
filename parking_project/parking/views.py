@@ -5,6 +5,7 @@ from rest_framework.mixins import ListModelMixin, CreateModelMixin
 
 from parking_project.parking.models import Parking
 from parking_project.parking.serializers import ParkingSerializer
+from parking_project.parking_space_detector.parking_detector import refresh_frames
 
 
 class ParkingList(GenericAPIView, ListModelMixin):

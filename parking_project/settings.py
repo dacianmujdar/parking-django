@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.postgres',
     'rest_framework',
+    'background_task',
     'parking_project.parking',
     'parking_project.parking_space',
     'parking_project.camera',
