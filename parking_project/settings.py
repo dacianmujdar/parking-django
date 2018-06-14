@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'parking_project.requests',
     'parking_project.offer',
     'parking_project.account',
+    'parking_project.parking_space_detector',
     'oauth2_provider',
     'corsheaders',
 ]
