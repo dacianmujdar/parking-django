@@ -3,7 +3,6 @@ from django.utils import timezone
 
 import numpy as np
 import urllib
-import cv2
 from keras.models import model_from_json
 import logging
 from background_task import background
