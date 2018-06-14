@@ -6,18 +6,15 @@ from parking_project.parking_space.models import ParkingSpace
 from parking_project.parking_space.serializers import ParkingSpaceSerializer
 
 
-class ParkingSpacesList(GenericAPIView, ListModelMixin, DestroyModelMixin):
+class ParkingSpacesList(GenericAPIView, ListModelMixin):
     serializer_class = ParkingSpaceSerializer
-    permission_classes = (permissions.IsAuthenticated,)
+    permission_classes = (permissions.AllowAny,)
 
     def get_queryset(self):
         return ParkingSpace.objects.filter(parking=self.kwargs['parking_id'])
 
     def get(self, request, *args, **kwargs):
         return self.list(request, *args, **kwargs)
-
-    def delete(self, request, *args, **kwargs):
-        return self.destroy(request, *args, **kwargs)
 
 
 class OwnParkingSpacesView(GenericAPIView, ListModelMixin):
