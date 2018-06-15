@@ -11,4 +11,5 @@ class RequestSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Request
+        exclude_fields = ('created',)
 
