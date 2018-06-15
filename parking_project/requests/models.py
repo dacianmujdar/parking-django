@@ -1,8 +1,9 @@
 from django.db import models
 from extended_choices import Choices
+from django_extensions.db.models import TimeStampedModel
 
 
-class Request(models.Model):
+class Request(TimeStampedModel):
     """
     Request model
     """
