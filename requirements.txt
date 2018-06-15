@@ -6,7 +6,7 @@ autobahn==17.10.1
 Automat==0.6.0
 bcrypt==3.1.0
 billiard==3.3.0.23
-bleach==1.4.3
+bleach==1.5.0
 boto==2.40.0
 celery==3.1.23
 cffi==1.8.2

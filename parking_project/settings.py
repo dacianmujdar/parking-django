@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'background_task',
     'django.contrib.postgres',
     'rest_framework',
     'parking_project.parking',
@@ -52,6 +51,7 @@ INSTALLED_APPS = [
     'parking_project.account',
     'parking_project.parking_space_detector',
     'oauth2_provider',
+    'background_task',
     'corsheaders',
 ]
 
