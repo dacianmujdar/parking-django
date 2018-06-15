@@ -34,8 +34,9 @@ def load_model():
     return predictor
 
 
+@background()
 def refresh_frames():
-    logging.info("Refreshing frames")
+    import pdb; pdb.set_trace()
     neural_network_predictor = load_model()
     for camera in Camera.objects.all():
         image = return_frame_from_url(camera.url)
