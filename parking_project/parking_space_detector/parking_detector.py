@@ -12,7 +12,7 @@ from io import BytesIO
 
 from parking_project.camera.models import Camera
 
-RED = (0, 0, 255)
+RED = (245, 10, 10)
 GREEN = (0, 255, 0)
 NN_INPUT_SIZE = (64, 64)
 
@@ -58,9 +58,11 @@ def refresh_frames():
 
                 draw = ImageDraw.Draw(image)
                 if camera_parking_spot.is_occupied:
-                    draw.rectangle((upper_left, bottom_right), outline="red")
+                    draw.rectangle((upper_left, bottom_right), outline=RED)
+                    draw.text(upper_left, camera_parking_spot.code, fill=RED)
                 else:
-                    draw.rectangle((upper_left, bottom_right), outline="green")
+                    draw.rectangle((upper_left, bottom_right), outline=GREEN)
+                    draw.text(upper_left, camera_parking_spot.code, fill=GREEN)
             except:
                 pass
         image.save('static/parking{}.png'.format(camera.parking.id))
