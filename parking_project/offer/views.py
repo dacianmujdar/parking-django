@@ -5,7 +5,7 @@ from rest_framework.generics import GenericAPIView, get_object_or_404
 from rest_framework.mixins import CreateModelMixin, DestroyModelMixin, ListModelMixin
 
 from parking_project.offer.models import Offer
-from parking_project.offer.serializers import OfferSerializer
+from parking_project.offer.serializers import OfferSerializer, CreateOfferSerializer
 from parking_project.requests.models import Request
 
 
@@ -20,7 +20,11 @@ class OffersView(GenericAPIView, CreateModelMixin, ListModelMixin):
         return self.list(request, *args, **kwargs)
 
     def post(self, request, *args, **kwargs):
-        return self.create(request, *args, **kwargs)
+        serializer = CreateOfferSerializer()
+        serializer.is_valid(raise_exception=True)
+        self.perform_create(serializer)
+        headers = self.get_success_headers(serializer.data)
+        return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
 
 
 class OfferDetail(DestroyModelMixin, GenericAPIView):
