@@ -44,7 +44,7 @@ class RequestView(GenericAPIView, CreateModelMixin, ListModelMixin):
     permission_classes = (permissions.IsAuthenticated,)
 
     def get_queryset(self):
-        return Request.objects.filter(creator=self.request.user.profile)
+        return Request.objects.filter(creator=self.request.user.profile).order_by('-created')
 
     def post(self, request, *args, **kwargs):
         return self.create(request, *args, **kwargs)
@@ -60,7 +60,7 @@ class InboxView(GenericAPIView, ListModelMixin):
     def get_queryset(self):
         account = self.request.user.profile
         # all requests made to user offers OR all requests created by the user with status ACCEPTED or REJECTED
-        return Request.objects.filter(Q(offer__creator=account) | Q(creator=account, status__gt=1))
+        return Request.objects.filter(Q(offer__creator=account) | Q(creator=account, status__gt=1)).order_by('-modified')
 
     def get(self, request, *args, **kwargs):
         return self.list(request, *args, **kwargs)

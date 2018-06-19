@@ -14,14 +14,13 @@ class OffersView(GenericAPIView, CreateModelMixin, ListModelMixin):
     permission_classes = (permissions.IsAuthenticated,)
 
     def get_queryset(self):
-        return Offer.objects.filter(creator=self.request.user.profile, status__lte=2)
+        return Offer.objects.filter(creator=self.request.user.profile, status__lte=2).order_by('-creation_date')
 
     def get(self, request, *args, **kwargs):
         return self.list(request, *args, **kwargs)
 
     def post(self, request, *args, **kwargs):
         serializer = CreateOfferSerializer(data=request.data)
-        import pdb; pdb.set_trace()
         serializer.is_valid(raise_exception=True)
         self.perform_create(serializer)
         headers = self.get_success_headers(serializer.data)
@@ -33,7 +32,7 @@ class AllOffersView(GenericAPIView, ListModelMixin):
     permission_classes = (permissions.IsAuthenticated,)
 
     def get_queryset(self):
-        return Offer.objects.filter(status__lte=2)
+        return Offer.objects.filter(status__lte=2).order_by('-creation_date')
 
     def get(self, request, *args, **kwargs):
         return self.list(request, *args, **kwargs)
