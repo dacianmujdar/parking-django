@@ -17,9 +17,10 @@ class AccountSerializer(serializers.ModelSerializer):
     def update(self, instance, validated_data):
         validated_user = validated_data.pop('user', {})
 
-        if validated_user and hasattr(validated_user, 'iteritems'):
-            for field_name, value in validated_user.iteritems():
-                setattr(instance.user, field_name, value)
+        user_fields = ['first_name', 'last_name', 'email']
+        for field_name in user_fields:
+            if field_name in validated_user:
+                setattr(instance.user, field_name, validated_user[field_name])
             instance.user.save()
 
         return super(AccountSerializer, self).update(instance, validated_data)
