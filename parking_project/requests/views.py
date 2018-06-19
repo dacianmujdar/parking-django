@@ -4,6 +4,7 @@ from rest_framework import status
 from rest_framework.generics import GenericAPIView, get_object_or_404
 from rest_framework.mixins import ListModelMixin, CreateModelMixin
 from rest_framework.response import Response
+from rest_framework import views
 
 from django.db.models import Q
 
@@ -66,7 +67,7 @@ class InboxView(GenericAPIView, ListModelMixin):
         return self.list(request, *args, **kwargs)
 
 
-class AcceptRequestView(GenericAPIView, CreateModelMixin):
+class AcceptRequestView(views.APIView):
     permission_classes = (permissions.IsAuthenticated,)
 
     def post(self, request, *args, **kwargs):
@@ -88,7 +89,7 @@ class AcceptRequestView(GenericAPIView, CreateModelMixin):
         return Response(status=status.HTTP_204_NO_CONTENT)
 
 
-class RejectRequestView(GenericAPIView, CreateModelMixin):
+class RejectRequestView(views.APIView):
     permission_classes = (permissions.IsAuthenticated,)
 
     def post(self, request, *args, **kwargs):
@@ -105,7 +106,7 @@ class RejectRequestView(GenericAPIView, CreateModelMixin):
         return Response(status=status.HTTP_204_NO_CONTENT)
 
 
-class MarkAsViewedView(GenericAPIView, CreateModelMixin):
+class MarkAsViewedView(views.APIView):
     permission_classes = (permissions.IsAuthenticated,)
 
     def post(self, request, *args, **kwargs):
