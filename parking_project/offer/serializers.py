@@ -12,7 +12,9 @@ class OfferSerializer(serializers.ModelSerializer):
         model = Offer
 
     def get_parking_space_code(self, offer):
-        return offer.parking_space.code
+        if hasattr(offer, 'parking_space'):
+            return offer.parking_space.code
+        return ''
 
 
 class CreateOfferSerializer(serializers.ModelSerializer):
