@@ -18,3 +18,4 @@ class OfferSerializer(serializers.ModelSerializer):
 class CreateOfferSerializer(serializers.ModelSerializer):
     class Meta:
         model = Offer
+        exclude = ('creator',)
