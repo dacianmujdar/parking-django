@@ -17,7 +17,7 @@ from django.conf.urls import url, include
 from django.contrib import admin
 
 from parking_project.account.views import ProfileView
-from parking_project.offer.views import OffersView, OfferDetail
+from parking_project.offer.views import OffersView, OfferDetail, AllOffersView
 from parking_project.parking.views import ParkingList
 from parking_project.parking_space.views import ParkingSpacesList, OwnParkingSpacesView
 from parking_project.requests.views import RequestView, RequestDetail, AcceptRequestView, RejectRequestView, InboxView, \
@@ -50,6 +50,8 @@ urlpatterns = [
 
     # offers
     url(r'^offers/$', OffersView.as_view()),
+    url(r'^all-offers/$', AllOffersView.as_view()),
+
     url(r'^offers/(?P<pk>[0-9]+)/$', OfferDetail.as_view()),
 
 ]

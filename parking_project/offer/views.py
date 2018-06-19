@@ -20,11 +20,23 @@ class OffersView(GenericAPIView, CreateModelMixin, ListModelMixin):
         return self.list(request, *args, **kwargs)
 
     def post(self, request, *args, **kwargs):
-        serializer = CreateOfferSerializer()
+        serializer = CreateOfferSerializer(data=request.data)
+        import pdb; pdb.set_trace()
         serializer.is_valid(raise_exception=True)
         self.perform_create(serializer)
         headers = self.get_success_headers(serializer.data)
         return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
+
+
+class AllOffersView(GenericAPIView, ListModelMixin):
+    serializer_class = OfferSerializer
+    permission_classes = (permissions.IsAuthenticated,)
+
+    def get_queryset(self):
+        return Offer.objects.filter(status__lte=2)
+
+    def get(self, request, *args, **kwargs):
+        return self.list(request, *args, **kwargs)
 
 
 class OfferDetail(DestroyModelMixin, GenericAPIView):
