@@ -19,5 +19,7 @@ class Offer(models.Model):
     parking_space = models.ForeignKey('parking_space.ParkingSpace', related_name='offers', null=True, blank=True)
 
     def __str__(self):
-        return "Offer: period - {} : {}, creator - {}, {}".format(self.start_date.date(), self.expiration_date.date(),
-                                                                  self.creator, self.parking_space)
+        if self.start_date and self.expiration_date:
+            return "Offer: period - {} : {}, creator - {}, {}".format(self.start_date.date(), self.expiration_date.date(),
+                                                                      self.creator, self.parking_space)
+        return "Offer: creator - {}, {}".format(self.creator, self.parking_space)
