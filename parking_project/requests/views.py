@@ -1,7 +1,7 @@
 from rest_framework import mixins
 from rest_framework import permissions
 from rest_framework import status
-from rest_framework.generics import GenericAPIView
+from rest_framework.generics import GenericAPIView, get_object_or_404
 from rest_framework.mixins import ListModelMixin, CreateModelMixin
 from rest_framework.response import Response
 
@@ -24,7 +24,7 @@ class RequestDetail(mixins.RetrieveModelMixin,
         belonging to an application package
         """
         request_id = self.kwargs['pk']
-        return Request.objects.filter(id=request_id)
+        return get_object_or_404(Request, id=request_id, creator=self.request.user.profile)
 
     def get(self, request, *args, **kwargs):
         return self.retrieve(request, *args, **kwargs)

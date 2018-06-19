@@ -6,6 +6,7 @@ class Offer(models.Model):
     STATUS_TYPE = Choices(
         ('AVAILABLE', 1, 'Available'),
         ('UNAVAILABLE', 2, 'Unavailable'),
+        ('DELETED', 3, 'Deleted by the creator'),
     )
     start_date = models.DateTimeField(null=True, blank=True)
     expiration_date = models.DateTimeField(null=True, blank=True)
