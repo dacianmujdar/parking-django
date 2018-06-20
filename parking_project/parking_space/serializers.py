@@ -9,4 +9,4 @@ class ParkingSpaceSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = ParkingSpace
-        fields = ('code', 'is_occupied', 'times_extended', 'start_date', 'expiration_date', 'allocated_to')
+        fields = ('id', 'code', 'is_occupied', 'times_extended', 'start_date', 'expiration_date', 'allocated_to')
