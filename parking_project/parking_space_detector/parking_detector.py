@@ -46,7 +46,7 @@ class Predictor:
 def refresh_frames():
     print("--------------------- Start refresh frame cycle ---------------------")
     neural_network_predictor = Predictor.load_model()
-    print("---- {} cameras".format(Camera.objects.count()))
+    print("--------------------- {} cameras ---------------------".format(Camera.objects.count()))
     for camera in Camera.objects.all():
         image = return_frame_from_url(camera.url)
         for camera_parking_spot in camera.parking.parking_spaces.all():
@@ -73,7 +73,8 @@ def refresh_frames():
                 else:
                     draw.rectangle((upper_left, bottom_right), outline=GREEN)
                     draw.text(upper_left, camera_parking_spot.code, fill=GREEN)
-            except:
+            except Exception as e:
+                print("--------------------- exception occured {} ---------------------".format(e.message))
                 pass
         image.save('static/parking{}.png'.format(camera.parking.id))
     print("--------------------- Finish refresh frame cycle ---------------------")
