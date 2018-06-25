@@ -188,4 +188,5 @@ CORS_ALLOW_HEADERS = (
 CORS_EXPOSE_HEADERS = list(CORS_ALLOW_HEADERS)
 
 
-CELERY_RESULT_BACKEND = env.db('REDIS_URL', 'redis://')
+BROKER_POOL_LIMIT = 3
+BROKER_URL = 'amqp://ohyqqudn:xagxV0lNAGzaDtO3VGOgpqmFyU8lbwxZ@wolverine.rmq.cloudamqp.com/ohyqqudn'
