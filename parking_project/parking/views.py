@@ -14,5 +14,4 @@ class ParkingList(GenericAPIView, ListModelMixin):
     permission_classes = (permissions.AllowAny,)
 
     def get(self, request, *args, **kwargs):
-        refresh_frames()
         return self.list(request, *args, **kwargs)
