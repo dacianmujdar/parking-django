@@ -77,6 +77,6 @@ def refresh_frames(cycle):
                 pass
         image.save('static/parking{}.png'.format(camera.parking.id))
     print("--------------------- Finish refresh frame cycle {} ---------------------".format(cycle))
-    refresh_frames.delay(cycle+1)
+    refresh_frames.apply_async((cycle+1,), countdown=5)
 
 
