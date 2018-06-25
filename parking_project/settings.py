@@ -54,7 +54,6 @@ INSTALLED_APPS = [
     'background_task',
     'corsheaders',
     'django_extensions',
-    'django_celery_results',
 ]
 
 MIDDLEWARE = [
