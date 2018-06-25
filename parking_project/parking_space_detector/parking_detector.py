@@ -46,6 +46,7 @@ class Predictor:
 def refresh_frames():
     print("--------------------- Start refresh frame cycle ---------------------")
     neural_network_predictor = Predictor.load_model()
+    print("---- {} cameras".format(Camera.objects.count()))
     for camera in Camera.objects.all():
         image = return_frame_from_url(camera.url)
         for camera_parking_spot in camera.parking.parking_spaces.all():
