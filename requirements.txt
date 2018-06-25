@@ -58,7 +58,6 @@ python-dateutil==2.6.0
 python-magic==0.4.10
 pytz==2016.4
 redgreenunittest==0.1.1
-redis==2.10.5
 requests==2.9.1
 simplejson==3.8.2
 six==1.10.0
