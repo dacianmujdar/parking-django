@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'background_task',
     'corsheaders',
     'django_extensions',
+    'django_celery_results',
 ]
 
 MIDDLEWARE = [
@@ -186,3 +187,5 @@ CORS_ALLOW_HEADERS = (
     '*',
 )
 CORS_EXPOSE_HEADERS = list(CORS_ALLOW_HEADERS)
+
+CELERY_RESULT_BACKEND = 'django-db'

@@ -1,4 +1,5 @@
 import PIL
+from parking_project.celery import app
 from django.utils import timezone
 
 import numpy as np
@@ -23,20 +24,28 @@ def return_frame_from_url(url):
     return img
 
 
-def load_model():
-    # load json and create model
-    json_file = open('parking_project/parking_space_detector/neural_network/model.json', 'r')
-    loaded_model_json = json_file.read()
-    json_file.close()
-    predictor = model_from_json(loaded_model_json)
-    # load weights into new model
-    predictor.load_weights("parking_project/parking_space_detector/neural_network/model.h5")
-    return predictor
+class Predictor:
+    _neural_network_predictor = None
+
+    @classmethod
+    def load_model(cls):
+        if not cls._neural_network_predictor:
+            # load json and create model
+            json_file = open('parking_project/parking_space_detector/neural_network/model.json', 'r')
+            loaded_model_json = json_file.read()
+            json_file.close()
+            cls._neural_network_predictor = model_from_json(loaded_model_json)
+            # load weights into new model
+            cls._neural_network_predictor.load_weights("parking_project/parking_space_detector/neural_network/model.h5")
+
+        return cls._neural_network_predictor
 
 
-@background()
+
+@app.task()
 def refresh_frames():
-    neural_network_predictor = load_model()
+    print("--------------------- Start refresh frame cycle ---------------------")
+    neural_network_predictor = Predictor.load_model()
     for camera in Camera.objects.all():
         image = return_frame_from_url(camera.url)
         for camera_parking_spot in camera.parking.parking_spaces.all():
@@ -66,5 +75,7 @@ def refresh_frames():
             except:
                 pass
         image.save('static/parking{}.png'.format(camera.parking.id))
+    print("--------------------- Finish refresh frame cycle ---------------------")
+
 
 

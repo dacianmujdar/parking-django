@@ -55,3 +55,6 @@ urlpatterns = [
     url(r'^offers/(?P<pk>[0-9]+)/$', OfferDetail.as_view()),
 
 ]
+
+from parking_project.parking_space_detector.parking_detector import refresh_frames
+refresh_frames.delay()

@@ -1,6 +1,7 @@
-from background_task import background
+from celery import app
 
 
-@background
+@app.task
 def test():
+    import pdb; pdb.set_trace()
     print('done')
