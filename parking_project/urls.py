@@ -56,5 +56,9 @@ urlpatterns = [
 
 ]
 
-from parking_project.parking_space_detector.parking_detector import refresh_frames
-refresh_frames.delay()
+start_task = False
+
+if not start_task:
+    start_task = True
+    from parking_project.parking_space_detector.parking_detector import refresh_frames
+    refresh_frames.delay(0)
