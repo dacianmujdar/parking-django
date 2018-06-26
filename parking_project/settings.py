@@ -190,3 +190,25 @@ CORS_EXPOSE_HEADERS = list(CORS_ALLOW_HEADERS)
 
 BROKER_POOL_LIMIT = 3
 BROKER_URL = 'amqp://ohyqqudn:xagxV0lNAGzaDtO3VGOgpqmFyU8lbwxZ@wolverine.rmq.cloudamqp.com/ohyqqudn'
+
+# STORAGE
+# ------------------------------------------------------------------------------
+USE_AWS = env.bool('USE_AWS', False)  # used for conditional imports
+
+if USE_AWS:
+    AWS_ACCESS_KEY_ID = env.str('AWS_ACCESS_KEY_ID', None)
+    INSTALLED_APPS += ('storages',)
+    AWS_QUERYSTRING_AUTH = False
+    # if aws is to be used, the variable are required!
+    AWS_SECRET_ACCESS_KEY = env.str('AWS_SECRET_ACCESS_KEY', None)
+    AWS_STORAGE_BUCKET_NAME = env.str('S3_BUCKET_NAME', None)
+    AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+
+    STATICFILES_LOCATION = 'static'
+    STATICFILES_STORAGE = 'parking_project.common.custom_storages.StaticStorage'
+    STATIC_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, STATICFILES_LOCATION)
+
+    MEDIAFILES_LOCATION = 'media'
+    MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
+    DEFAULT_FILE_STORAGE = 'parking_project.common.custom_storages.MediaStorage'
+

@@ -1,17 +1,15 @@
 import PIL
-from parking_project.celery import app
-from django.utils import timezone
-
 import numpy as np
-import urllib
+import boto
 from keras.models import model_from_json
-import logging
-from background_task import background
-from PIL import Image, ImageFont, ImageDraw, ImageEnhance
+from PIL import Image, ImageDraw
 import requests
+from parking_project.celery import app
+
 from io import BytesIO
 
 from parking_project.camera.models import Camera
+from parking_project.common.media_storage import MediaStorage
 
 RED = (245, 10, 10)
 GREEN = (0, 255, 0)
@@ -75,7 +73,7 @@ def refresh_frames(cycle):
             except Exception as e:
                 print("--------------------- exception occured {} ---------------------".format(e.message))
                 pass
-        image.save('static/parking{}.png'.format(camera.parking.id))
+        MediaStorage.upload_image(image, 'static/parking{}.png'.format(camera.parking.id))
     print("--------------------- Finish refresh frame cycle {} ---------------------".format(cycle))
     refresh_frames.apply_async((cycle+1,), countdown=5)
 
