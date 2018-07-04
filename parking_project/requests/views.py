@@ -52,7 +52,7 @@ class RequestView(GenericAPIView, CreateModelMixin, ListModelMixin):
         if 'offer' not in request.data:
             return Response("Please provide the field offer", status=400)
 
-        offer = get_object_or_404(Offer, id=request.data['offer'])
+        offer = get_object_or_404(Offer, id=int(request.data['offer']))
         request = Request.objects.create(creator=self.request.user.profile, offer=offer)
         return Response(RequestSerializer(instance=request).data, status=status.HTTP_201_CREATED)
 
