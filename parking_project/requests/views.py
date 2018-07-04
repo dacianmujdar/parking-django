@@ -20,12 +20,12 @@ class RequestDetail(mixins.RetrieveModelMixin,
     serializer_class = RequestSerializer
     permission_classes = (permissions.IsAuthenticated,)
 
-    def get_queryset(self):
+    def get_object(self):
         """
         This view returns the list of applications
         belonging to an application package
         """
-        request_id = self.kwargs['pk']
+        request_id = int(self.kwargs['pk'])
         return get_object_or_404(Request, id=request_id, creator=self.request.user.profile)
 
     def get(self, request, *args, **kwargs):
