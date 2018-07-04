@@ -49,6 +49,7 @@ class RequestView(GenericAPIView, CreateModelMixin, ListModelMixin):
         return Request.objects.filter(creator=self.request.user.profile).order_by('-created')
 
     def post(self, request, *args, **kwargs):
+        import pdb; pdb.set_trace()
         if 'offer' not in request.data:
             return Response("Please provide the field offer", status=400)
 
