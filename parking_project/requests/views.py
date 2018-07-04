@@ -8,6 +8,7 @@ from rest_framework import views
 
 from django.db.models import Q
 
+from parking_project.offer.models import Offer
 from parking_project.requests.models import Request
 from parking_project.requests.serializers import RequestSerializer
 
@@ -48,7 +49,12 @@ class RequestView(GenericAPIView, CreateModelMixin, ListModelMixin):
         return Request.objects.filter(creator=self.request.user.profile).order_by('-created')
 
     def post(self, request, *args, **kwargs):
-        return self.create(request, *args, **kwargs)
+        if 'offer' not in request.data:
+            return Response("Please provide the field offer", status=400)
+
+        offer = get_object_or_404(Offer, id=request.data['offer'])
+        request = Request.objects.create(creator=self.request.user.profile, offer=offer)
+        return Response(RequestSerializer(instance=request).data, status=status.HTTP_201_CREATED)
 
     def get(self, request, *args, **kwargs):
         return self.list(request, *args, **kwargs)

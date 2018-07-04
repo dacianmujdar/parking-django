@@ -1,11 +1,9 @@
-from rest_framework import mixins
 from rest_framework import permissions
 from rest_framework.generics import GenericAPIView
-from rest_framework.mixins import ListModelMixin, CreateModelMixin
+from rest_framework.mixins import ListModelMixin
 
 from parking_project.parking.models import Parking
 from parking_project.parking.serializers import ParkingSerializer
-from parking_project.parking_space_detector.parking_detector import refresh_frames
 
 
 class ParkingList(GenericAPIView, ListModelMixin):
